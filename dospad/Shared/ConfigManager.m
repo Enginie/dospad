@@ -30,8 +30,13 @@ const char *dospad_config_dir()
 
 + (NSString*)configsDirectory
 {
-	NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-	NSString *configsDir = [docDir stringByAppendingPathComponent:@"config"];
+    // Puts discounting in documents directory (for testing)
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+
+    // Puts discmounting in protected directory (for production)
+    // NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
+
+    NSString *configsDir = [docDir stringByAppendingPathComponent:@"config"];
 	return configsDir;
 }
 
@@ -39,7 +44,9 @@ const char *dospad_config_dir()
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	BOOL isDir = NO;
-	NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    // Use protected directory
+    //NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
 	
 	// Make sure default config dir exists
 	NSString *defaultDir = [[ConfigManager configsDirectory] stringByAppendingPathComponent:@"default"];
