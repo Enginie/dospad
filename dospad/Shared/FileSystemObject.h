@@ -25,6 +25,7 @@
 + (FileSystemObject*)sharedObject;
 -(NSString*)bundleDirectory;
 -(NSString*)documentsDirectory;
+-(NSString*)libraryDirectory;
 -(NSString*)homeDirectory;
 -(bool)ensureDirectoryExists:(NSString*)path;
 -(bool)createDirectory:(NSString*)path;
