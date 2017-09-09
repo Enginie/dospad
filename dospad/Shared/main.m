@@ -272,14 +272,24 @@ int main(int argc, char *argv[]) {
         FileSystemObject *fso = [FileSystemObject alloc];
 
         // Auto mount
-#ifndef IDOS // DOSPAD for CYDIA
-        strcpy(diskc, "/var/mobile/Documents");
-        strcpy(diskd, [[fso documentsDirectory] UTF8String]);
-#else
+        // #ifndef IDOS // DOSPAD for CYDIA
+        //         //strcpy(diskc, "/var/mobile/Documents");
+        //         //strcpy(diskd, [[fso documentsDirectory] UTF8String]);
+
+        //         // Fix Disc Mounting
+        //         strcpy(diskc, [[fso documentsDirectory] UTF8String]);
+        // #else
+        //         strcpy(diskc, [[fso libraryDirectory] UTF8String]);
+        //         strcpy(diskc, [[fso documentsDirectory] UTF8String]);
+        //         strcpy(diskd, "/var/mobile/Documents");
+        // #endif
+
+        // Puts discounting in documents directory (for testing)
         strcpy(diskc, [[fso documentsDirectory] UTF8String]);
-        strcpy(diskd, "/var/mobile/Documents");
-#endif
         
+        // Puts discmounting in protected directory (for production)
+        // strcpy(diskc, [[fso libraryDirectory] UTF8String]);
+
         NSString *cPath=[NSString stringWithUTF8String:diskc];
         NSString *dPath=[NSString stringWithUTF8String:diskd];
         
