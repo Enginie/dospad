@@ -1,2 +1,5 @@
 project.xcworkspace
 xcuserdata
+
+# Misc
+.DS_store
