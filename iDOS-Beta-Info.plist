@@ -11,7 +11,7 @@
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
 			<array>
-				<string>Icon-iPad-40@2x</string>
+				<string>Icon-iPad-40.png</string>
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>Zip Archive</string>
@@ -24,13 +24,11 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>Icon-iPhone-57.png</string>
+	<string>Icon57.png</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Icon-iPhone-57.png</string>
-		<string>Icon-iPhone-57@2x.png</string>
-		<string>Icon-iPad-72.png</string>
-		<string>Icon-iPad-72@2x.png</string>
+		<string>Icon57.png</string>
+		<string>Icon72.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -38,12 +36,10 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>Icon-iPhone-29</string>
-				<string>Icon-iPhone-29@2x</string>
-				<string>Icon-iPhone-40@2x</string>
-				<string>Icon-iPhone-60@2x</string>
-				<string>Icon-iPhone-57</string>
-				<string>Icon-iPhone-57@2x</string>
+				<string>Icon29.png</string>
+				<string>Icon40.png</string>
+				<string>Icon60.png</string>
+				<string>Icon57.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
@@ -55,16 +51,11 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>Icon-iPad-29</string>
-				<string>Icon-iPad-29@2x</string>
-				<string>Icon-iPad-40</string>
-				<string>Icon-iPad-40@2x</string>
-				<string>Icon-iPad-50</string>
-				<string>Icon-iPad-50@2x</string>
-				<string>Icon-iPad-72</string>
-				<string>Icon-iPad-72@2x</string>
-				<string>Icon-iPad-76</string>
-				<string>Icon-iPad-76@2x</string>
+				<string>Icon-iPad-29.png</string>
+				<string>Icon-iPad-40.png</string>
+				<string>Icon-iPad-50.png</string>
+				<string>Icon-iPad-72.png</string>
+				<string>Icon-iPad-76.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
