@@ -257,6 +257,38 @@ extern int SDL_SendKeyboardKey(int index, Uint8 state, SDL_scancode scancode);
     [screenView sendMouseEvent:0 left:NO down:NO];            
 }
 
+-(BOOL)onTap:(CGPoint)pt
+{
+    if (!DEFS_GET_INT(kDirectTouchEnabled) || [self isPortrait]){
+       screenX = -1;
+       screenY = -1;
+       return NO;
+    } 
+
+    // SVGA Mode
+    if (DEFS_GET_INT(kDirectTouchSVGAMode)){
+        //  (EMULATED DISPLAY MAX X / CLICK FIELD MAX X) * CLICK X Coord
+        //  (EMULATED DISPLAY MAX Y / CLICK FIELD MAX Y) * CLICK Y Coord
+        CGPoint pt2 = [self.screenView convertPoint:pt toView:self.view];
+        screenX = ((self.screenView.bounds.size.width * (float) 2) / (self.view.bounds.size.width)) * pt2.x;
+        screenY = (self.screenView.bounds.size.height / (self.view.bounds.size.height)) * pt2.y;
+        //   printf("Finger X: %f\n", pt2.x);
+        //   printf("Finger Y: %f\n", pt2.y); 
+    } else {
+        screenX = pt.x;
+        screenY = pt.y;
+    }
+
+    // printf("Pt X: %f\n", pt.x);
+    // printf("Pt Y: %f\n", pt.y);
+    // Printf("ScreenX: %f\n", screenX);
+    // printf("ScreenY: %f\n", screenY);
+    // printf("Bound width: %f\n", self.view.bounds.size.width);
+    // printf("Bound height: %f\n", self.view.bounds.size.height);
+    // printf("Emu width: %f\n", self.screenView.bounds.size.width);
+    // printf("Emu height: %f\n", self.screenView.bounds.size.height);
+}
+
 -(BOOL)onDoubleTap:(CGPoint)pt
 {
     // Do nothing

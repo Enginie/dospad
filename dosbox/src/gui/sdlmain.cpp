@@ -27,6 +27,8 @@ extern "C" {
     extern void dospad_should_pause();
 }
 #endif
+extern float screenX;
+extern float screenY;
 
 #include <stdlib.h>
 #include <string.h>
@@ -1280,13 +1282,14 @@ void Mouse_AutoLock(bool enable) {
 }
 
 static void HandleMouseMotion(SDL_MouseMotionEvent * motion) {
-	if (sdl.mouse.locked || !sdl.mouse.autoenable)
-		Mouse_CursorMoved((float)motion->xrel*sdl.mouse.sensitivity/100.0f,
-						  (float)motion->yrel*sdl.mouse.sensitivity/100.0f,
-						  (float)(motion->x-sdl.clip.x)/(sdl.clip.w-1)*sdl.mouse.sensitivity/100.0f,
-						  (float)(motion->y-sdl.clip.y)/(sdl.clip.h-1)*sdl.mouse.sensitivity/100.0f,
-						  sdl.mouse.locked);
+  if (screenX < 0 && (sdl.mouse.locked || !sdl.mouse.autoenable))
+        Mouse_CursorMoved((float)motion->xrel*sdl.mouse.sensitivity/100.0f,
+                        (float)motion->yrel*sdl.mouse.sensitivity/100.0f,
+                        (float)(motion->x-sdl.clip.x)/(sdl.clip.w-1)*sdl.mouse.sensitivity/100.0f,
+                        (float)(motion->y-sdl.clip.y)/(sdl.clip.h-1)*sdl.mouse.sensitivity/100.0f,
+                        sdl.mouse.locked); 
 }
+ 
 
 static void HandleMouseButton(SDL_MouseButtonEvent * button) {
 	switch (button->state) {
@@ -1300,7 +1303,11 @@ static void HandleMouseButton(SDL_MouseButtonEvent * button) {
 			GFX_CaptureMouse();
 			break;
 		}
-		switch (button->button) {
+         
+        if (screenX >= 0)
+          Mouse_CursorSet(screenX, screenY);
+        
+        switch (button->button) {
 		case SDL_BUTTON_LEFT:
 			Mouse_ButtonPressed(0);
 			break;
@@ -1318,7 +1325,7 @@ static void HandleMouseButton(SDL_MouseButtonEvent * button) {
 			Mouse_ButtonReleased(0);
 			break;
 		case SDL_BUTTON_RIGHT:
-			Mouse_ButtonReleased(1);
+ 			Mouse_ButtonReleased(1);
 			break;
 		case SDL_BUTTON_MIDDLE:
 			Mouse_ButtonReleased(2);
@@ -1427,8 +1434,8 @@ void GFX_Events() {
 			HandleMouseMotion(&event.motion);
 			break;
 		case SDL_MOUSEBUTTONDOWN:
-		case SDL_MOUSEBUTTONUP:
-			HandleMouseButton(&event.button);
+        case SDL_MOUSEBUTTONUP:
+            HandleMouseButton(&event.button);
 			break;
 		case SDL_VIDEORESIZE:
 //			HandleVideoResize(&event.resize);
@@ -1911,7 +1918,9 @@ int main(int argc, char* argv[]) {
 #endif
 //		UI_Init();
 //		if (control->cmdline->FindExist("-startui")) UI_Run(false);
-		/* Init all the sections */
+        /* 64bit Crash Patch (Workings branch)*/
+        sleep(1);
+        /* Init all the sections */
 		control->Init();
 		/* Some extra SDL Functions */
 		Section_prop * sdl_sec=static_cast<Section_prop *>(control->GetSection("sdl"));
