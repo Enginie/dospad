@@ -59,6 +59,13 @@
     return docDirectory;
 }
 
+-(NSString*)libraryDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *libDirectory = [paths objectAtIndex:0];
+    return libDirectory;
+}
+
 -(bool)createDirectory:(NSString*)path
 {
     NSDictionary* attr = [NSDictionary dictionaryWithObjectsAndKeys:
