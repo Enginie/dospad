@@ -3924,7 +3924,7 @@
 					"-framework",
 					UIKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dospad.merchant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dospad.1830;
 				PRODUCT_NAME = dospad;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -3963,7 +3963,7 @@
 					"-framework",
 					UIKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dospad.merchant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dospad.1830;
 				PRODUCT_NAME = dospad;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -4272,7 +4272,7 @@
 					"-framework",
 					UIKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dospad.merchant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dospad.1830;
 				PRODUCT_NAME = dospad;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
