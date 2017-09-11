@@ -41,6 +41,7 @@
 #define kDirectTouchSVGAMode   @"direct_touch_svga_mode"
 #define kDoubleTapAsRightClick @"double_tap_as_right_click"
 #define kGamePadSoundEnabled   @"gamepad_sound_enabled"
+#define kLandbarMinimized      @"landbar_minimized"
 #define kDPadMovable           @"dpad_movable"
 #define kSmartKeyboardMappings @"smart_keyboard_mappings"
 #define kNumpadEnabled         @"numpad_enabled"
