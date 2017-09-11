@@ -89,6 +89,16 @@
 			<string>direct_touch_svga_mode</string>
 			<key>DefaultValue</key>
 			<false/>
+		</dict>
+        <dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Minimize Landbar</string>
+			<key>Key</key>
+			<string>landbar_minimized</string>
+			<key>DefaultValue</key>
+			<false/>
 		</dict> 
 		<dict>
 			<key>Title</key>
