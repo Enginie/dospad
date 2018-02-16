@@ -52,7 +52,7 @@
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 			<key>Key</key>
 			<string>double_tap_as_right_click</string>
 			<key>Title</key>
@@ -78,7 +78,7 @@
 			<key>Key</key>
 			<string>direct_touch_enabled</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
         <dict>
             <key>Type</key>
@@ -86,7 +86,7 @@
             <key>Key</key>
             <string>direct_touch_x_axis</string>
             <key>DefaultValue</key>
-            <string>1</string>
+            <string>2</string>
             <key>Title</key>
             <string>Direct Touch Width Modifier</string>
             <key>Titles</key>
@@ -144,7 +144,7 @@
  			<key>Key</key>
  			<string>landbar_minimized</string>
  			<key>DefaultValue</key>
- 			<false/>
+ 			<true/>
   		</dict>
 		<dict>
 			<key>Title</key>
