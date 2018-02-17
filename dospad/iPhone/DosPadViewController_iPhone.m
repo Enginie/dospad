@@ -45,7 +45,7 @@ static struct {
 } toggleButtonMin [] = {
 	{InputSource_PCKeyboard,    "modekeyon.png",          "modekeyoff.png"    },
 	{InputSource_GamePad,       "modegamepadpressed.png", "modegamepad.png"   },
-	{InputSource_Joystick,      "modejoypressed.png",     "modejoy.png"       },
+	{InputSource_MouseButtons,      "mouseon.png",     "mouseoff.png"       },
 };
 #define NUM_BUTTON_MIN (sizeof(toggleButtonMin)/sizeof(toggleButtonMin[0]))
 
