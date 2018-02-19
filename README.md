@@ -9,10 +9,12 @@ What's Next
 ======
 * Tutorial Overlay
 * Statistic Printout as Overlay
-* Persistant Scrollable News
+* Persistent Scrollable News
 * Suggested Trade Routes
 * Trade Good Purchase History Overlay
 * Improved Touchscreen support for Ship Skirmishes
 * Other Performance Tweaks
 
+Preview
+======
 [![Patrician on iOS](https://img.youtube.com/vi/swHzw9H_T_4/0.jpg)](https://www.youtube.com/watch?v=swHzw9H_T_4)
